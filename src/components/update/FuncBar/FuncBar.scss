@@ -1,0 +1,45 @@
+
+
+.bar{
+    background-color: rgb(81, 84, 86);
+    border-radius: 8px;
+    width: var(--bar-width);
+    height: 70vh;
+    position: absolute;
+    top: 60vh;
+    left: 10vw ;
+    transform:translate(0%, -50%);
+}
+
+.bar-button-container{
+    padding-top: 10px;
+    width: 13.5vw;
+    height: var(--bar-height);
+    left: 0.25vw;
+    position: relative;
+
+    
+}
+
+.bar-button {
+    border-radius: 8px;
+    border: 1.5px solid;
+    padding: 0.6em 1.2em;
+    font-size: 1.75vmin;
+    font-weight: 700;
+    font-family: inherit;
+    background-color: rgb(81, 84, 86);
+    cursor: pointer;
+    transition: border-color 0.25s;
+    width: 13.5vw;
+    height: var(--bar-height);
+  }
+
+.bar-button:hover {
+    border-color: #2a2a2c;
+    background-color: #2a2a2c;
+  }
+.bar-button:focus,
+.bar-button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }

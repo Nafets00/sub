@@ -1,0 +1,52 @@
+.Head{
+    background-color: rgb(81, 84, 86);
+    box-shadow: rgb(29, 27, 27);
+    border-radius: 8px;
+    width: 80vw;
+    height: 15vh;
+    position: absolute;
+    top:15%;
+    left:50%;
+    transform:translate(-50%, -50%);
+
+}
+.title{
+    position: relative;
+    text-align: left;
+    padding-left: 1vw;
+    width: 30vw;
+}
+
+.Fwave{
+    display: inline-block;
+    position: relative; 
+    font-size: 6vmin;
+    padding-left: 0.5vw;
+}
+
+.logo-fin {
+    height: 9vh;
+    position: relative;
+    display: inline-block;
+    top: 2vh;
+   
+}
+
+.button-container{
+    text-align: center;
+    padding-bottom: 12px;
+    padding-right: 12px;
+
+}
+.right-container{
+    position: absolute;
+    right: 1vw;
+    top: 2.5vh;
+    width: 15vw;
+    height: 15vh;
+}
+
+
+.logo-fin:hover {
+    filter: drop-shadow(0 0 2em #6b6b6daa);
+    }

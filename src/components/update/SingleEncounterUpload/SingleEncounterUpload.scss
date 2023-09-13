@@ -1,0 +1,87 @@
+.encouterUploadForm{
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 2vh;
+    height: 70vh;
+}
+.leftcolumn{
+    width: 50%;
+    text-align: center;
+    height: 50%;
+    z-index: 100000;
+}
+.rightcolumn{
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    transform: translate(100%, -100%);
+    z-index: 100000;
+}
+.seuInput{
+    height: 2vh;
+    width: 9vw;
+    margin-right: 10px;
+}
+.seuDate{
+    height: 2vh;
+    width: 18vw;
+}
+.locationNameInput{
+    height: 2vh;
+    width: 20vw;
+    margin-right: 10px;
+}
+.selectPredationEvent{
+    width: 14vw;
+    border: 1.5px solid #2a2a2c;
+    border-radius: 8px;
+    padding-bottom: 1vh;
+    text-align: center;
+    margin: 0 auto;
+}
+.predEvent{
+    font-size: 2vmin;
+    margin: 0 auto;
+}
+.bottom{
+    position: relative;
+    padding-left: 1.4vw;
+    transform: translate(-46%,120%);
+}
+
+.text{
+    height: 15vh;
+    width: 48vw;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    cursor: pointer;
+}
+
+.multiselect{
+    font-weight: 200;
+    width: 20vw;
+    margin: 1.25vh auto;
+    height: 4vh;
+    --rmsc-radius: 8px !important;
+    --rmsc-h: 3.8vh !important;
+    --rmsc-main: #edebea !important;
+    --rmsc-hover: #929496 !important;
+    --rmsc-selected: #7b7d7f !important;
+    --rmsc-border: #2a2a2c !important;
+    --rmsc-bg: #525151 !important;
+    
+}
+.seImageInput{
+    width: 20vw;
+    height: 2vh;
+}
+.display{
+    height: 70vh;
+}
+.seSubmitButton{
+    transform: translate(-605%, 80%);
+}
+.seError{
+    transform: translate(10%, -220%);
+}

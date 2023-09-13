@@ -1,0 +1,220 @@
+.plate{
+    background-color: rgb(81, 84, 86);
+    box-shadow: rgb(29, 27, 27);
+    border-radius: 8px;
+    position: absolute;
+    top: 60vh;
+    left: 26vw;
+    height: 70vh;
+    width: 64vw;
+    transform: translate(0%, -50%)
+}
+
+
+.in{
+  color: black;
+    padding: 4px;
+    margin: -4px;
+    position: relative;
+    outline: none;
+    width: 25vw;  
+    /* File Selector Button Styles */
+    &::file-selector-button {
+      border-radius: 4px;
+      padding: 0 16px;
+      height: 40px;
+      cursor: pointer;
+      background-color: white;
+      border: 1px solid rgba(#000, 0.16);
+      box-shadow: 0px 1px 0px rgba(#000, 0.05);
+      margin-right: 16px;
+      width: 150px;
+      color: transparent;
+      @supports (-moz-appearance: none) {
+        color: var(--primary-color);
+      }
+  
+      &:hover {
+        background-color: #f3f4f6;
+      }
+  
+      &:active {
+        background-color: #e5e7eb;
+      }
+    }
+  
+    /* Faked label styles and icon */
+    &::before {
+      position: absolute;
+      pointer-events: none;
+      top: 14px;
+      left: 16px;
+      height: 20px;
+      width: 20px;
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+    }
+    
+    &::after {
+      position: absolute;
+      pointer-events: none;
+      top: 16px;
+      left: 40px;
+      color: var(--primary-color);
+      content: "Choose a Folder";
+    }
+  
+    /* Handle Component Focus */
+    &:focus-within::file-selector-button,
+    &:focus::file-selector-button {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+  }
+
+  .csv{
+    color: black;
+    padding: 4px;
+    margin: -4px;
+    position: relative;
+    outline: none;
+    width: 25vw;  
+    /* File Selector Button Styles */
+    &::file-selector-button {
+      border-radius: 4px;
+      padding: 0 16px;
+      height: 40px;
+      cursor: pointer;
+      background-color: white;
+      border: 1px solid rgba(#000, 0.16);
+      box-shadow: 0px 1px 0px rgba(#000, 0.05);
+      margin-right: 16px;
+      width: 150px;
+      color: transparent;
+      @supports (-moz-appearance: none) {
+        color: var(--primary-color);
+      }
+  
+      &:hover {
+        background-color: #f3f4f6;
+      }
+  
+      &:active {
+        background-color: #e5e7eb;
+      }
+    }
+  
+    /* Faked label styles and icon */
+    &::before {
+      position: absolute;
+      pointer-events: none;
+      top: 14px;
+      left: 16px;
+      height: 20px;
+      width: 20px;
+      content: "";
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%230964B0'%3E%3Cpath d='M18 15v3H6v-3H4v3c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3h-2zM7 9l1.41 1.41L11 7.83V16h2V7.83l2.59 2.58L17 9l-5-5-5 5z'/%3E%3C/svg%3E");
+    }
+    
+    &::after {
+      position: absolute;
+      pointer-events: none;
+      top: 16px;
+      left: 40px;
+      color: var(--primary-color);
+      content: "Choose a csv file";
+    }
+  
+    /* Handle Component Focus */
+    &:focus-within::file-selector-button,
+    &:focus::file-selector-button {
+      outline: 2px solid var(--primary-color);
+      outline-offset: 2px;
+    }
+  }
+  .sub{
+    position: relative;
+    left: 20px;
+  }
+
+  form{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  span{
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    color: rgb(222, 220, 220);
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1.5vw;
+    color: black;
+  }
+
+  .selectFolder{
+    width: 40vw;
+    transform: translate(6%, 150%);
+}
+
+  .userSelection{
+    transform: translate(5%, -280%);
+  }
+  .rad{
+    cursor: pointer;
+    accent-color: #5f5f5f;
+    &:checked + span{
+        background-color: #807e7e;
+        color: rgb(71, 70, 70);
+    }
+
+  }
+
+  .fileStructureInformation{
+    transform: translate(5%, -100%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  select{
+    width: 12vw;
+    height: 2.5vh;
+    position: relative;
+    
+  }
+  
+  .h{
+    color: black;
+    font-size: 1.5vw;
+    
+  }
+  
+  .prev{
+    width:10vw;
+  }
+
+  .error{
+    font-size: 1.5vw;
+    transform: translate(10%, -240%);
+  }
+  .success{
+    position: relative;
+    font-size: 1.5vw;
+  }
+
+  .dropdown{
+    width: 20vw;
+    height: 3.5vh;
+    background-color: #525151;
+    border: 1.5px solid #2a2a2c;
+    border-radius: 8px;
+    font-size: 1.1vw;
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  .display{
+    height: 65vh;
+  }
+  
