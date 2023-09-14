@@ -130,7 +130,7 @@ const SingleEncounterUpload = () =>{
     }
     catch(error)
     {
-        //ElectronLog.error(`failed to fetch populations: ${error}`)
+        ElectronLog.error(`failed to fetch populations: ${error}`)
         setError(`Failed to fetch populations please load again`)
         setDisplayError(true)
     }
@@ -156,7 +156,7 @@ const SingleEncounterUpload = () =>{
         setOrganizationArray(tempArray)}
         catch(error)
         {
-        //ElectronLog.error(`failed to fetch organizations: ${error}`)
+        ElectronLog.error(`failed to fetch organizations: ${error}`)
         setError(`Failed to fetch organizations please load again or check the logs`)
         setDisplayError(true)
         }
@@ -183,7 +183,7 @@ const SingleEncounterUpload = () =>{
         }
         catch(error)
         {
-            //ElectronLog.error(`failed to fetch behaviours: ${error}`)
+            ElectronLog.error(`failed to fetch behaviours: ${error}`)
             setError(`Failed to fetch behaviours please load again or check logs`)
             setDisplayError(true)
         }
@@ -229,7 +229,7 @@ const SingleEncounterUpload = () =>{
         setContributionArray(tempArray)
         }
         catch(error){
-            //ElectronLog.error(`failed to fetch contributors: ${error}`)
+            ElectronLog.error(`failed to fetch contributors: ${error}`)
             setError(`Failed to fetch contributors please load again or check logs`)
             setDisplayError(true)
         }
@@ -239,44 +239,44 @@ const SingleEncounterUpload = () =>{
         if(population === "")
         {
             setError("Please select a population")
-            //ElectronLog.warn("tried to upload single encounter but no population was selected")
+            ElectronLog.warn("tried to upload single encounter but no population was selected")
             return false
         }
         if(contributionMultiselect.length === 0)
         {
             setError("Please choose either a contributor or yourself")
-            //ElectronLog.warn("tried to upload single encounter but no contributor was selected")
+            ElectronLog.warn("tried to upload single encounter but no contributor was selected")
             return false        
         }
         if(date === ""){
             setError("Please choose a date")
-            //ElectronLog.warn("tried to upload single encounter but no date was selected")
+            ElectronLog.warn("tried to upload single encounter but no date was selected")
             return false
         }
         if(predEvent === ""){
             setError("Please select 'yes' or 'no'")
-            //ElectronLog.warn("tried to upload single encounter but no predation option was selected")
+            ElectronLog.warn("tried to upload single encounter but no predation option was selected")
             return false
         }
         if(latitude === ""){
             setError("Please give a latitude")
-            //ElectronLog.warn("tried to upload single encounter but no latitude was given")
+            ElectronLog.warn("tried to upload single encounter but no latitude was given")
             return false
         }
         if(longitude === ""){
             setError("Please give a longitude")
-            //ElectronLog.warn("tried to upload single encounter but no longitude was given")
+            ElectronLog.warn("tried to upload single encounter but no longitude was given")
             return false
         }
         if(locationName === ""){
             setError("Please give the name of the location")
-            //ElectronLog.warn("tried to upload single encounter but no location was given")
+            ElectronLog.warn("tried to upload single encounter but no location was given")
             return false
         }
         if(len === 0)
         {
             setError("There are no files in your upload")
-            //ElectronLog.warn("tried to upload single encounter but no images were selected")
+            ElectronLog.warn("tried to upload single encounter but no images were selected")
             return false
         }
         return true
@@ -321,7 +321,6 @@ const SingleEncounterUpload = () =>{
                 compStatus = false
             }
 
-            console.log(notes, locationName, latitude, longitude, date, organizationIds, population, radioVal, contributor, contributorFirstName, contributorLastName, contributorEmail, contributorUsername, iUser, compStatus, encounterBehaviors);
             try
             {const response = await fetch(`https://devel.whalee.io/api/encounter`, {
             method: 'POST',
@@ -353,7 +352,6 @@ const SingleEncounterUpload = () =>{
                 )
         })
         const data = await response.json()
-        console.log(data)
         uploadImages(images, data.id)
 
         let dis = document.getElementById("display")
@@ -362,7 +360,7 @@ const SingleEncounterUpload = () =>{
             setShowSuccess(true)
         }}
         catch(error){
-            //ElectronLog.error(`failed to upload encounter: ${error}`)
+            ElectronLog.error(`failed to upload encounter: ${error}`)
             setError(`Failed to upload encounter please try again or check the logs`)
             setDisplayError(true)
         }
@@ -385,13 +383,12 @@ const SingleEncounterUpload = () =>{
             body: formData
             }
             )
-            console.log(response)
             sucCounter++
             setSuccess(`successfully uploaded ${sucCounter} of ${counterForImages} images`)
             }
             catch(error)
             {
-                //ElectronLog.warn(`not able to upload ${images[i].name} either not an image or failed upload`)
+                ElectronLog.warn(`not able to upload ${images[i].name} either not an image or failed upload`)
             }
             
         }

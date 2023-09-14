@@ -9,9 +9,9 @@ function App() {
   let testToken = localStorage.getItem("Atoken")
   return (
     <div className='App'>
-      {testToken && <Auth/>}
+      {!testToken && <Auth/>}
       
-      {!testToken &&
+      {testToken &&
       <>
         <div>
           <ToolHeader></ToolHeader>

@@ -24,17 +24,16 @@ export default function () {
             body: JSON.stringify({email, password})
         })
         const data = await response.json()
-        console.log(data)
         if(!data.isAuthSuccessful){
-            //ElectronLog.warn(`logging was not successful ${data.errorMessage}`)
+            ElectronLog.warn(`logging was not successful ${data.errorMessage}`)
             setError(data.errorMessage) 
         }else{
-            //ElectronLog.info("logging was successful")
+            ElectronLog.info("logging was successful")
             setToken(data.token)
         }
     }
         catch(error){
-            //ElectronLog.error(`Server error: ${error}`)
+            ElectronLog.error(`Server error: ${error}`)
             setError("Could not connect to server, please try again later")
         }
         

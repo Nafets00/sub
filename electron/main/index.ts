@@ -43,8 +43,7 @@ const indexHtml = join(process.env.DIST, 'index.html')
 
 async function createWindow() {
   win = new BrowserWindow({
-    titleBarOverlay: true,
-    resizable: true,
+    resizable: false,
     height: 900,
     width: 1300,
     minHeight: 900,
@@ -53,7 +52,7 @@ async function createWindow() {
     title: 'Main window',
     icon: join(process.env.PUBLIC, 'favicon.ico'),
     webPreferences: {
-      devTools: true,
+      devTools: false,
       preload,
       // Warning: Enable nodeIntegration and disable contextIsolation is not secure in production
       // Consider using contextBridge.exposeInMainWorld
@@ -62,7 +61,7 @@ async function createWindow() {
       contextIsolation: false,
     },
   })
-  //Menu.setApplicationMenu(null)
+  Menu.setApplicationMenu(null)
 
   if (url) { // electron-vite-vue#298
     win.loadURL(url)

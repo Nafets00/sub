@@ -318,9 +318,7 @@ const CreateEncounter = () =>{
         }
         catch(err)
         {
-            console.log("err")
-            console.error(err)
-            //ElectronLog.error(err)
+            ElectronLog.error(err)
         }
     }
     //handle upload of pictures
@@ -340,7 +338,7 @@ const CreateEncounter = () =>{
             body: formData})
             if(response.ok === true)
             {
-                //ElectronLog.info(`successfully uploaded image: ${images[i].path}`)
+                ElectronLog.info(`successfully uploaded image: ${images[i].path}`)
                 sucCounter = sucCounter + 1
                 setError(`Trying to upload ${counterForImages} images... \n ${sucCounter} images successfully uploaded`)
             }
@@ -378,7 +376,7 @@ const CreateEncounter = () =>{
             sortImages(vars, image);
         }
         else{
-            //ElectronLog.error(`${image.name} has wrong naming structure`)
+            ElectronLog.error(`${image.name} has wrong naming structure`)
         }
         
         
@@ -429,7 +427,7 @@ const CreateEncounter = () =>{
             }
         }
         differentEncounters.push(array)
-        //ElectronLog.info(`new encounter with population: ${array[0]}, date of encounter: ${array[1]}, user: ${array[2]} and location: ${array[3]}`)
+        ElectronLog.info(`new encounter with population: ${array[0]}, date of encounter: ${array[1]}, user: ${array[2]} and location: ${array[3]}`)
         imagesOfEncounters.push([])
         imagesOfEncounters[imagesOfEncounters.length-1].push(image)
         return false;
@@ -442,7 +440,7 @@ const CreateEncounter = () =>{
         const drowdownResults = [firstDropDown, secondDropDown, thirdDropDown, fourthDropDown]
         //check if radio button has a value
         if(radio==""){
-            //ElectronLog.warn(`Tried to upload images but no radio button was selected`)
+            ElectronLog.warn(`Tried to upload images but no radio button was selected`)
             setError("Please choose one of the two options!")
             setShowError(true)
             return false  
@@ -450,7 +448,7 @@ const CreateEncounter = () =>{
         //check, if the values from the dropdown menu are unique, todo: make selected values dissapear in other dropdowns
         else if(!(drowdownResults.filter(distinct).length===4))
         {
-            //ElectronLog.warn(`Tried to upload images but selected dopdown options were not distinct`)
+            ElectronLog.warn(`Tried to upload images but selected dopdown options were not distinct`)
             setError("Please choose each dropdown option only once!")
             setShowError(true)
             return false
@@ -458,7 +456,7 @@ const CreateEncounter = () =>{
         //check if images have been selected
         else if(images.length === 0)
         {
-            //ElectronLog.warn(`Tried to upload images but no folder was selected`)
+            ElectronLog.warn(`Tried to upload images but no folder was selected`)
             setError("There are no files in your upload!")
             setShowError(true)
             return false
@@ -466,7 +464,7 @@ const CreateEncounter = () =>{
         //check if a csv file was chosen
         else if(csv.length === 0)
         {
-            //ElectronLog.warn(`Tried to upload images but no csv file was selected`)
+            ElectronLog.warn(`Tried to upload images but no csv file was selected`)
             setError("Please provide a CSV file!")
             setShowError(true)
             return false
@@ -488,12 +486,12 @@ const CreateEncounter = () =>{
                     try{
                         let metadata = await exifr.parse(images[i])
                         counterForImages++
-                        //ElectronLog.info(`${images[i].path} queued for upload`)
+                        ElectronLog.info(`${images[i].path} queued for upload`)
                         splitImages(images[i])
                     }
                     catch(err)
                     {
-                        //ElectronLog.error(`${err} : ${images[i].path} is not an image`)
+                        ElectronLog.error(`${err} : ${images[i].path} is not an image`)
                     }
                     
                     
