@@ -18,11 +18,14 @@
     "pree2e": "vite build --mode=test",
     "e2e": "playwright test"
   },
+  "repository": "https://github.com/Nafets00/sub",
+  "publish": {"provider": "github",
+              "releaseType": "release"},
   "build": {
-    "appID": "com.whalee.subtool",
-    "productName": "Subtool for whalee",
+    "appId": "com.whalee.subtool",
+    "productName": "Subtool",
     "win":{"target": "nsis"},
-    "directories": {"output": "dist"}
+    "directories": {"output": "release"}
   },
   "dependencies": {
     "dotenv": "^16.0.3",
