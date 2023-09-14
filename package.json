@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "main": "dist-electron/main/index.js",
   "description": "whalee.io subtool",
-  "author": "Stefan Bauer",
+  "author": {"name": "Stefan Bauer", "email": "stefan@rfbauer.de"},
   "license": "MIT",
   "private": true,
   "debug": {
@@ -25,6 +25,8 @@
     "appId": "com.whalee.subtool",
     "productName": "Subtool",
     "win":{"target": "nsis"},
+    "linux":{"target": "deb"},
+    "deb":{},
     "directories": {"output": "release"}
   },
   "dependencies": {
