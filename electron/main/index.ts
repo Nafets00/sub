@@ -44,7 +44,7 @@ const indexHtml = join(process.env.DIST, 'index.html')
 async function createWindow() {
   win = new BrowserWindow({
     titleBarOverlay: true,
-    resizable: false,
+    resizable: true,
     height: 900,
     width: 1300,
     minHeight: 900,
