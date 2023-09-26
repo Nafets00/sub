@@ -18,11 +18,11 @@ const FuncBar = () => {
         {mode == 'showSingleEncounterUpload' && <SingleEncounterUpload/>}
         <div className="bar">
                <div className="bar-button-container">
-                <button className="bar-button" onClick={createNewEncounter}>Create new encounters</button>
+                <button className="bar-button" onClick={createNewEncounter}>Bulk Encounter Upload</button>
                 </div>
 
                 <div className="bar-button-container">
-                    <button className="bar-button" onClick={showSingleEncounterUpload}>Single encounter upload</button>
+                    <button className="bar-button" onClick={showSingleEncounterUpload}>Single Encounter Upload</button>
                 </div> 
         </div>
         </div>
